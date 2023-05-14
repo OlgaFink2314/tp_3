@@ -92,6 +92,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="PercentCounter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Reader.cs" />
   </ItemGroup>

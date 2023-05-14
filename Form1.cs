@@ -27,5 +27,38 @@ namespace tp_3
             textBox2.Text = list;
             this.button1.Click += new System.EventHandler(this.button1_Click);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Graphsdraw();
+        }
+
+        private void Graphsdraw()
+        {
+
+            string filePath = textBox1.Text;
+            FileReader f = new FileReader(filePath);
+
+            Data data = f.ReadIntoData();
+
+            chart1.Series[0].Points.Clear();
+
+
+            for (int i = 0; i < 15; i++)
+            {
+                chart1.Series[0].Points.AddXY(data.getYears()[i], data.getPeople()[i]);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string filePath = textBox1.Text;
+            FileReader f = new FileReader(filePath);
+            Data data = f.ReadIntoData();
+            PercentCounter p = new PercentCounter();
+            List<double> percentChange = p.GetPercentChange(data.getPeople());
+            foreach (double i in percentChange)
+            { richTextBox1.Text += i + " "; }
+        }
     }
 }
