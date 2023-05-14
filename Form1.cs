@@ -16,5 +16,16 @@ namespace tp_3
         {
             InitializeComponent();
         }
+
+        List<string> list = new List<string>();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string filePath = textBox1.Text;
+            FileReader fileReader = new FileReader(filePath);
+            string list = fileReader.ReadFileContent();
+            this.list.Add(list);
+            textBox2.Text = list;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+        }
     }
 }
