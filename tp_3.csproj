@@ -83,6 +83,8 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data.cs" />
+    <Compile Include="FileReader.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
